@@ -1,0 +1,37 @@
+body {
+    background: #3E8DDB;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.header {
+    width: 30%;
+    margin: auto;
+}
+
+#burgerPic {
+    width: 10em;
+    display: block;
+    margin: auto;
+}
+
+.eatBurger {
+    float: left;
+}
+
+.ateBurger {
+    float: right;
+}
+
+.order {
+    padding-top: 10em;
+    width: 21%;
+    margin: 0 auto;
+}

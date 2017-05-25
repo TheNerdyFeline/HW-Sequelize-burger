@@ -12,9 +12,9 @@
 	    <li>
 		{{this.burger_name}}
 		
-		<form action="/{{this.id}}?_method=PUT" method="POST">
-		    <input type="hidden" name="devoured" value="false">
-		    <button type="submit">Devour It!</button>
+		<form>
+		    <input id="id" type="hidden" name="devoured" value="{{this.id}}">
+		    <button id="devour" type="submit">Devour It!</button>
 		</form>
 		
 	    </li>
@@ -30,11 +30,6 @@
 	    {{#if this.devoured}}
 	    <li>
 		{{this.burger_name}}
-		
-		<form action="/{{this.id}}?_method=PUT" method="POST">
-		    <input type="hidden" name="devoured" value="true">
-		</form>
-		
 	    </li>
 	    {{/if}}
 	    {{/each}}
@@ -43,14 +38,12 @@
 
     <div class="order">
 	<h2>Order a Burger</h2>
-	<form class="create-update-form" action="/" method="POST">
-	    
+	<form class="form">
 	    <div class="form-group">
-		<label for="ca">Burger Name:</label>
-		<input type="text" id="burg" name="burger">
+		<label for="burger">Burger Name:</label>
+		<input type="text" id="burger_name" name="burger">
 	    </div>
-	    
-	    <button type="submit">Add Burger</button>
+	    <button id="addBurger" type="submit">Add Burger</button>
 	</form>
     </div>
 </div>

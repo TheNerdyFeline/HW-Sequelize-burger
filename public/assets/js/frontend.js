@@ -6,8 +6,6 @@ $(document).ready(function() {
 
     function devourBurger() {
 	var id = $("#id").attr("value");
-	console.log(id);
-	console.log("devouring");
 	$.ajax({
 	    method: "PUT",
 	    url: "/" + id
@@ -24,7 +22,7 @@ $(document).ready(function() {
 	//newOrder = $("#burg").val().trim();
 	$.post("/burgers", newOrder, function(response) {
 	    console.log("new order");
-	    window.location.href = "/";
+	   window.location.href = "/";
 	});
     }; 
 

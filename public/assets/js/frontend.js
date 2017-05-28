@@ -6,7 +6,6 @@ $(document).ready(function() {
 
     function devourBurger() {
 	var id = $("#id").attr("value");
-	console.log(id);
 	console.log("devouring");
 	$.ajax({
 	    method: "PUT",

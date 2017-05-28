@@ -11,10 +11,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-// We need to use sessions to keep track of our user's login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
@@ -29,6 +25,14 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/routes.js");
 
 app.use('/', routes);
+
+db.sequelize.authenticate().then(function() {
+  console.log('Database connected and authenticated!');
+  return true;
+}).catch(function(err) {
+  console.error('Failed to connect and authenticate', err);
+  return false;
+});
 
 db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
